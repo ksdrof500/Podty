@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="podcast.com.br.podtche.viewmodel.HomeItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_item_home"
+        android:orientation="vertical"
+        android:elevation="6dp"
+        >
+
+        <ImageView
+            android:id="@+id/offerThumb"
+            android:layout_width="@dimen/article_thumb_widht"
+            android:layout_height="@dimen/article_thumb_widht"
+            android:background="#F1F1F1"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@{viewModel.title}"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{viewModel.image}" />
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/offerTitle"-->
+            <!--android:layout_width="@dimen/article_thumb_widht"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/offerThumb"-->
+            <!--android:layout_marginTop="-50dp"-->
+            <!--android:background="@drawable/scrim"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:gravity="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:text="@{viewModel.title}"-->
+            <!--tools:text="Upward: Big Wave Chrager " />-->
+
+
+    </RelativeLayout>
+
+</layout>

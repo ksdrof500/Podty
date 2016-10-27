@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "1042930653530",
+    "project_id": "firebase-podtche"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042930653530:android:e7d2ba4de3a3ffa9",
+        "android_client_info": {
+          "package_name": "podcast.com.br.podtche"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042930653530-a034jd9mvkeok65a9htd23gdo98uer87.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "podcast.com.br.podtche",
+            "certificate_hash": "0BE5AD99E4C790E53B9DAEEC2CD096D7147E25ED"
+          }
+        },
+        {
+          "client_id": "1042930653530-9k9knh76tdn2a6p0po7qdu76a35fdr3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRsEUwC4gvd3HwqTQ8gsnTTibuZhMp3QU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-85138273-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

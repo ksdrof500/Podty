@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="MenuHeaderBinding">
+
+        <variable
+            name="viewModel"
+            type="podcast.com.br.podtche.viewmodel.MenuHeaderViewModel" />
+    </data>
+
+
+    <FrameLayout
+        android:id="@+id/navigation_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/colorPrimary"
+        android:onClick="@{viewModel::onClickLogin}">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePic"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="23dp"
+            android:background="@drawable/ic_profile_pic"
+            android:contentDescription="@string/acc_profile_picture"
+            android:src="@drawable/ic_profile_pic"
+            app:civ_border_color="#00000000"
+            app:civ_border_width="0dp"
+            app:imageUrl="@{viewModel.avatar}"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="38dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_do_login"
+                android:textColor="@android:color/white"
+                android:textSize="21sp"
+                app:visible="@{!viewModel.isLogged}"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_get_in"
+                android:textColor="@color/profile_subtitle"
+                android:textSize="16sp"
+                app:visible="@{!viewModel.isLogged}"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.name}"
+                android:textColor="@android:color/white"
+                android:textSize="21sp"
+                app:visible="@{viewModel.isLogged}"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.msisdn}"
+                android:textColor="@color/profile_subtitle"
+                android:textSize="16sp"
+                app:visible="@{viewModel.isLogged}"
+                 />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="11dp"
+            android:contentDescription="@string/acc_configs"
+            android:src="@drawable/ic_profile_gear"
+            app:visible="@{viewModel.isLogged}" />
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="profile_subtitle">@color/primaryTextDark</color>
+
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="colorAccent">#7C4DFF</color>
+    <color name="primaryTextDark">#212121</color>
+    <color name="textColorPrimaryInverse">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

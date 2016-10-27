@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PodTche</string>
+
+    <string name="label_do_login">Faça login</string>
+    <string name="label_get_in">Entre com seu email</string>
+    <string name="acc_profile_picture">Imagem de perfil</string>
+    <string name="acc_configs">Configurações</string>
+    <string name="title_menu_about">Sobre</string>
+    <string name="title_menu_favorites">Favoritos</string>
+    <string name="title_menu_home">Home</string>
+
+
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
+
+    <string name="menu_title_home">HOME</string>
+
+
+
+    <string name="facebook_app_id">2162082357349454</string>
+    <string name="server_client_id">1042930653530</string>
+    <!--<string name="server_client_id">wK766QhaA6rQA-y8kzz57v-H</string>-->
+</resources>
