@@ -79,6 +79,7 @@
                 android:background="@drawable/buttons"
                 android:text="Sign in"
                 android:textAllCaps="false"
+                android:onClick="starMain"
                 android:textColor="#fff"
                 android:textSize="16sp" />
 
