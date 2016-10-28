@@ -54,7 +54,7 @@ public class PodtyListFragment extends Fragment implements HomeView{
         super.onCreate(savedInstanceState);
 //        if (podtyList != null) {
         adapter = new PodtyListAdapter(getActivity());
-        viewModel = new HomeViewModel(getContext(), this);
+        viewModel = new HomeViewModel(getActivity(), this);
 //        }
 
 //        OffersManager.getInstance().addObserver(this);

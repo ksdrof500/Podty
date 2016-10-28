@@ -2,22 +2,15 @@ package podcast.com.br.podtche.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import podcast.com.br.podtche.MainApplication;
 import podcast.com.br.podtche.api.PodApi;
-import podcast.com.br.podtche.utils.ConnectionUtils;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
 import rx.subjects.SerializedSubject;
 

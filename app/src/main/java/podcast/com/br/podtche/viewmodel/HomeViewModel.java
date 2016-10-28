@@ -1,16 +1,14 @@
 package podcast.com.br.podtche.viewmodel;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.app.Activity;
 import android.databinding.ObservableBoolean;
-import android.util.Log;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import javax.inject.Inject;
 
-
 import podcast.com.br.podtche.MainApplication;
 import podcast.com.br.podtche.api.PodApi;
-import podcast.com.br.podtche.data.AnalyticsManager;
 import podcast.com.br.podtche.view.HomeView;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -25,18 +23,18 @@ public class HomeViewModel extends ProgressViewModel {
     public ObservableBoolean showHighlight;
 
     @Inject protected PodApi api;
-    @Inject protected AnalyticsManager analytics;
 
     private HomeView view;
 
-    public HomeViewModel(Context context, HomeView view) {
+    public HomeViewModel(Activity context, HomeView view) {
 
         this.view = view;
 
         MainApplication.getApplication(context)
                 .getComponent().inject(this);
 
-        analytics.trackHomeScreen();
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
+        mFirebaseAnalytics.setCurrentScreen(context,"home", "home");
         showHighlight = new ObservableBoolean();
 
         refresh();

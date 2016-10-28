@@ -5,9 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,9 +14,7 @@ import java.util.List;
 import podcast.com.br.podtche.R;
 import podcast.com.br.podtche.databinding.FragmentHomeBinding;
 import podcast.com.br.podtche.model.Category;
-import podcast.com.br.podtche.model.Podty;
 import podcast.com.br.podtche.ui.adapters.PagerAdapter;
-import podcast.com.br.podtche.view.HomeView;
 
 
 /**

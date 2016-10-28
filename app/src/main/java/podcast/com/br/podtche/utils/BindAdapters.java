@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bugsnag.android.Bugsnag;
-import com.bugsnag.android.MetaData;
 import com.bumptech.glide.Glide;
 
 
@@ -35,9 +33,9 @@ public final class BindAdapters {
 
             }catch (Exception e){
 //                SafeLog.e(LOG_TAG, url != null ? url : "URL nula");
-                MetaData metaData = new MetaData();
-                metaData.addToTab("IMAGE-URL", url,view);
-                Bugsnag.notify(e,metaData);
+//                MetaData metaData = new MetaData();
+//                metaData.addToTab("IMAGE-URL", url,view);
+//                Bugsnag.notify(e,metaData);
             }
 
         } else {

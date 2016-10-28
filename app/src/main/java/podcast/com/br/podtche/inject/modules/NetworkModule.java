@@ -3,21 +3,12 @@ package podcast.com.br.podtche.inject.modules;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
-
-import javax.inject.Named;
 import javax.inject.Singleton;
-
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Authenticator;
 import okhttp3.Credentials;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.Route;
 import podcast.com.br.podtche.api.PodApi;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -39,7 +30,7 @@ public class NetworkModule {
                                    OkHttpClient client) {
 
         return new Retrofit.Builder()
-                .baseUrl("http://brnapi.us-east-1.elasticbeanstalk.com")
+                .baseUrl("http://api.podty.co")
                 .client(client)
                 .addConverterFactory(gsonConverterFactory)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())

@@ -3,7 +3,6 @@ package podcast.com.br.podtche;
 import android.app.Application;
 import android.content.Context;
 
-import com.bugsnag.android.Bugsnag;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.stetho.Stetho;

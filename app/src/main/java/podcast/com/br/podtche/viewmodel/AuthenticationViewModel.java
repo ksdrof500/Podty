@@ -6,14 +6,10 @@ import android.databinding.ObservableBoolean;
 
 import javax.inject.Inject;
 
-
 import podcast.com.br.podtche.MainApplication;
 import podcast.com.br.podtche.api.PodApi;
-import podcast.com.br.podtche.data.AnalyticsManager;
 import podcast.com.br.podtche.data.LoginManager;
 import podcast.com.br.podtche.view.LoginView;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by fenrir on 18/03/16.
@@ -33,8 +29,6 @@ public abstract class AuthenticationViewModel extends BaseObservable {
     @Inject
     protected LoginManager loginManager;
 
-    @Inject
-    protected AnalyticsManager analytics;
 
     public AuthenticationViewModel(Context context, LoginView loginView, String msisdn) {
 

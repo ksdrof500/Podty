@@ -1,7 +1,6 @@
 package podcast.com.br.podtche.viewmodel;
 
 import android.content.Context;
-import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;

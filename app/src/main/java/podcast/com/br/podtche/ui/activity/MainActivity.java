@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
-
 import podcast.com.br.podtche.R;
 import podcast.com.br.podtche.databinding.MainBinding;
 import podcast.com.br.podtche.databinding.MenuHeaderBinding;

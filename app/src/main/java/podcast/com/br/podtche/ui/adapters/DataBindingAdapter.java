@@ -11,9 +11,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import podcast.com.br.podtche.model.DefaultResponse;
-import podcast.com.br.podtche.model.Podty;
-
 /**
  * Created by gholz on 3/5/16.
  */

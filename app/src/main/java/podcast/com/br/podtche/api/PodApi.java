@@ -2,14 +2,9 @@ package podcast.com.br.podtche.api;
 
 import java.util.List;
 
-import podcast.com.br.podtche.model.ChannelResponse;
 import podcast.com.br.podtche.model.DefaultResponse;
 import podcast.com.br.podtche.model.Podty;
-import podcast.com.br.podtche.model.SimpleResponse;
-import retrofit2.http.DELETE;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import rx.Observable;
 
@@ -21,8 +16,11 @@ public interface PodApi {
     @GET("/v1/feeds/top")
     Observable<DefaultResponse<List<Podty>>> getPodty();
 
-//    @GET("/api/recipes/find/{id}")
-//    Observable<Podty> getRecipe(@Path("id") long id);
+    @GET("/v1/episodes/feed/{id}")
+    Observable<Podty> getEpisodes(@Path("id") long id);
+
+    @GET("/v1/feeds/id/{id}")
+    Observable<Podty> getFindById(@Path("id") long id);
 
 
 //    @GET("/api/v1/subscription/{msisdn}")

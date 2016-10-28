@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "1042930653530",
-    "project_id": "firebase-podtche"
+    "firebase_url": "https://fir-podtche.firebaseio.com",
+    "project_id": "firebase-podtche",
+    "storage_bucket": "firebase-podtche.appspot.com"
   },
   "client": [
     {
@@ -21,6 +23,10 @@
           }
         },
         {
+          "client_id": "1042930653530-udbh32qn9s1idn75m1vvoaqlikt7iqi5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "1042930653530-9k9knh76tdn2a6p0po7qdu76a35fdr3k.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -38,11 +44,16 @@
           }
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042930653530-udbh32qn9s1idn75m1vvoaqlikt7iqi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
