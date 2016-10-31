@@ -39,7 +39,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         podty = extras.getParcelable(EXTRA_PODTY);
         detailViewModel = new DetailViewModel(this, this, podty);
 
-        binding.setViewModel(detailViewModel);
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -50,6 +49,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
             slide.setDuration(R.integer.detail_desc_slide_duration);
             getWindow().setEnterTransition(slide);
         }
+
+        binding.setViewModel(detailViewModel);
 
     }
 
