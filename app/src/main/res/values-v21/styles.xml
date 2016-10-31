@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Home" parent="AppTheme.NoActionBar">
+        <item name="android:windowExitTransition">@transition/grid_exit</item>
+        <item name="android:windowReenterTransition">@transition/grid_reenter</item>
+    </style>
+
+    <style name="AppTheme.Details" parent="AppTheme.NoActionBar">
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_photo</item>
+    </style>
+</resources>
