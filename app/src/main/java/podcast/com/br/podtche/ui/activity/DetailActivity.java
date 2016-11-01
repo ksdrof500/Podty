@@ -43,7 +43,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slide = new Slide(Gravity.BOTTOM);
-            slide.addTarget(R.id.description);
+            slide.addTarget(binding.description);
             slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator
                     .linear_out_slow_in));
             slide.setDuration(R.integer.detail_desc_slide_duration);
