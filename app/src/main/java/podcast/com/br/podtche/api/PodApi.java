@@ -3,6 +3,7 @@ package podcast.com.br.podtche.api;
 import java.util.List;
 
 import podcast.com.br.podtche.model.DefaultResponse;
+import podcast.com.br.podtche.model.Episodes;
 import podcast.com.br.podtche.model.Podty;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -17,7 +18,7 @@ public interface PodApi {
     Observable<DefaultResponse<List<Podty>>> getPodty();
 
     @GET("/v1/episodes/feed/{id}")
-    Observable<Podty> getEpisodes(@Path("id") long id);
+    Observable<DefaultResponse<List<Episodes>>> getEpisodes(@Path("id") long id);
 
     @GET("/v1/feeds/id/{id}")
     Observable<Podty> getFindById(@Path("id") long id);

@@ -42,34 +42,40 @@
             </FrameLayout>
 
 
-            <LinearLayout
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:transitionGroup="true">
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_group"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:transitionGroup="true">-->
 
-                <TextView
-                    android:id="@+id/author"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="@dimen/padding_normal"
-                    android:paddingStart="@dimen/padding_normal"
-                    android:paddingTop="@dimen/padding_large"
-                    android:text="@string/app_name"
-                    android:textColor="?android:textColorPrimary"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/author"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingEnd="@dimen/padding_normal"-->
+                    <!--android:paddingStart="@dimen/padding_normal"-->
+                    <!--android:paddingTop="@dimen/padding_large"-->
+                    <!--android:text="@string/app_name"-->
+                    <!--android:textColor="?android:textColorPrimary"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:lineSpacingMultiplier="1.26315789474"
-                    android:paddingEnd="@dimen/padding_normal"
-                    android:paddingStart="@dimen/padding_normal"
-                    android:paddingTop="@dimen/padding_normal"
-                    android:text="@string/lorum_ipsum"
-                    android:textColor="?android:textColorSecondary"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/description"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:lineSpacingMultiplier="1.26315789474"-->
+                    <!--android:paddingEnd="@dimen/padding_normal"-->
+                    <!--android:paddingStart="@dimen/padding_normal"-->
+                    <!--android:paddingTop="@dimen/padding_normal"-->
+                    <!--android:text="@string/lorum_ipsum"-->
+                    <!--android:textColor="?android:textColorSecondary"/>-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/podtyList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

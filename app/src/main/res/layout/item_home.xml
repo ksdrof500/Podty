@@ -21,30 +21,31 @@
         android:elevation="6dp"
         >
 
-        <ImageView
-            android:id="@+id/photo"
-            android:layout_width="@dimen/article_thumb_widht"
-            android:layout_height="@dimen/article_thumb_widht"
-            android:background="#F1F1F1"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@{viewModel.title}"
-            android:scaleType="centerCrop"
-            android:onClick="@{viewModel::onClickItem}"
-            android:stateListAnimator="@animator/raise"
-            android:transitionName="@string/transition_photo"
-            app:imageUrl="@{viewModel.image}" />
-
-        <!--<com.example.android.unsplash.ui.ForegroundImageView-->
+        <!--<ImageView-->
             <!--android:id="@+id/photo"-->
             <!--android:layout_width="@dimen/article_thumb_widht"-->
             <!--android:layout_height="@dimen/article_thumb_widht"-->
-            <!--android:scaleType="centerCrop"-->
             <!--android:background="#F1F1F1"-->
-            <!--android:foreground="@drawable/grey_ripple"-->
-            <!--android:clickable="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:contentDescription="@{viewModel.title}"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:onClick="@{viewModel::onClickItem}"-->
             <!--android:stateListAnimator="@animator/raise"-->
             <!--android:transitionName="@string/transition_photo"-->
-            <!--/>-->
+            <!--app:imageUrl="@{viewModel.image}" />-->
+
+        <podcast.com.br.podtche.ui.ForegroundImageView
+            android:id="@+id/photo"
+            android:layout_width="@dimen/article_thumb_widht"
+            android:layout_height="@dimen/article_thumb_widht"
+            android:scaleType="centerCrop"
+            android:background="#F1F1F1"
+            android:clickable="true"
+            android:onClick="@{viewModel::onClickItem}"
+            android:stateListAnimator="@animator/raise"
+            android:transitionName="@string/transition_photo"
+            app:imageUrl="@{viewModel.image}"
+            />
 
         <!--<TextView-->
             <!--android:id="@+id/offerTitle"-->

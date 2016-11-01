@@ -5,13 +5,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
+import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.animation.AnimationUtils;
 
+import java.util.List;
+
 import podcast.com.br.podtche.R;
 import podcast.com.br.podtche.databinding.DetailBinding;
+import podcast.com.br.podtche.model.DefaultResponse;
+import podcast.com.br.podtche.model.Episodes;
 import podcast.com.br.podtche.model.Podty;
+import podcast.com.br.podtche.ui.adapters.EpisodesListAdapter;
+import podcast.com.br.podtche.ui.adapters.PodtyListAdapter;
 import podcast.com.br.podtche.view.DetailView;
 import podcast.com.br.podtche.viewmodel.DetailViewModel;
 
@@ -26,6 +35,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     private Podty podty;
     private DetailBinding binding;
     private DetailViewModel detailViewModel;
+    private EpisodesListAdapter adapter;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,21 +49,27 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
         podty = extras.getParcelable(EXTRA_PODTY);
         detailViewModel = new DetailViewModel(this, this, podty);
-
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Slide slide = new Slide(Gravity.BOTTOM);
-            slide.addTarget(binding.description);
-            slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator
-                    .linear_out_slow_in));
-            slide.setDuration(R.integer.detail_desc_slide_duration);
-            getWindow().setEnterTransition(slide);
-        }
-
+        adapter = new EpisodesListAdapter(this);
         binding.setViewModel(detailViewModel);
 
+        RecyclerView.LayoutManager verticalManager = new LinearLayoutManager(getApplicationContext(),
+                OrientationHelper.VERTICAL, false);
+        binding.podtyList.setLayoutManager(verticalManager);
+        binding.podtyList.setAdapter(adapter);
+
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            Slide slide = new Slide(Gravity.BOTTOM);
+//            slide.addTarget(binding.llGroup);
+//            slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator
+//                    .linear_out_slow_in));
+//            slide.setDuration(R.integer.detail_desc_slide_duration);
+//            getWindow().setEnterTransition(slide);
+//        }
+
+
     }
+
 
 
     @Override
@@ -64,10 +81,17 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        detailViewModel.refresh();
+    }
 
 
     @Override
-    public void displayDetail(Podty podty) {
-
+    public void displayEpisodes(DefaultResponse<List<Episodes>> episodes) {
+        adapter.setItems(episodes.data);
     }
+
+
 }

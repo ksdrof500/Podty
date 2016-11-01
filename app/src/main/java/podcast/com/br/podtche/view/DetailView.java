@@ -1,5 +1,9 @@
 package podcast.com.br.podtche.view;
 
+import java.util.List;
+
+import podcast.com.br.podtche.model.DefaultResponse;
+import podcast.com.br.podtche.model.Episodes;
 import podcast.com.br.podtche.model.Podty;
 
 /**
@@ -7,5 +11,7 @@ import podcast.com.br.podtche.model.Podty;
  */
 
 public interface DetailView {
-    void displayDetail(Podty podty);
+    void displayEpisodes(DefaultResponse<List<Episodes>> episodes);
+
+
 }

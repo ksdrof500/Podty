@@ -8,6 +8,8 @@ import podcast.com.br.podtche.inject.modules.AppModule;
 import podcast.com.br.podtche.inject.modules.NetworkModule;
 import podcast.com.br.podtche.ui.activity.MainActivity;
 import podcast.com.br.podtche.viewmodel.AuthenticationViewModel;
+import podcast.com.br.podtche.viewmodel.DetailItemViewModel;
+import podcast.com.br.podtche.viewmodel.DetailViewModel;
 import podcast.com.br.podtche.viewmodel.HomeItemViewModel;
 import podcast.com.br.podtche.viewmodel.HomeViewModel;
 import podcast.com.br.podtche.viewmodel.MainViewModel;
@@ -23,6 +25,10 @@ public interface AppComponent {
     void inject(HomeViewModel viewModel);
 
     void inject(HomeItemViewModel viewModel);
+
+    void inject(DetailItemViewModel viewModel);
+
+    void inject(DetailViewModel viewModel);
 //
 //    void inject(RecipeDetailViewModel viewModel);
 //

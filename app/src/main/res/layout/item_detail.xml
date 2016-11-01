@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="podcast.com.br.podtche.viewmodel.DetailItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/relative_layout_offer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:onClick="@{viewModel::onClickItem}"
+        android:layout_marginBottom="2dp"
+        >
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="#F1F1F1"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorAccent"
+            android:contentDescription="@{viewModel.duration}"
+            />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignRight="@+id/duration"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/primaryTextDark"
+            android:contentDescription="@{viewModel.title}"
+            />
+
+    </LinearLayout>
+
+</layout>
