@@ -15,16 +15,13 @@ public class Episodes implements Parcelable {
     @SerializedName("id")
     public int id;
 
-    @SerializedName("feed_id")
-    public int feed_id;
-
     @SerializedName("title")
     public String title;
 
     @SerializedName("link")
     public String link;
 
-    @SerializedName("published_date")
+    @SerializedName("published_at")
     public String published_date;
 
     @SerializedName("summary")
@@ -50,7 +47,6 @@ public class Episodes implements Parcelable {
 
     public Episodes(Parcel in){
         this.id = in.readInt();
-        this.feed_id = in.readInt();
         this.title = in.readString();
         this.link = in.readString();
         this.published_date = in.readString();
@@ -70,7 +66,6 @@ public class Episodes implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.id);
-        parcel.writeInt(this.feed_id);
         parcel.writeString(this.title);
         parcel.writeString(this.link);
         parcel.writeString(this.published_date);

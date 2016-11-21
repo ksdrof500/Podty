@@ -5,6 +5,9 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by filipenunes on 10/3/16.
  */
@@ -46,6 +49,9 @@ public class Podty implements Parcelable {
     @SerializedName("last_search")
     public String last_search;
 
+    @SerializedName("episodes")
+    public List<Episodes> episodes;
+
 
     protected Podty(Parcel in) {
 
@@ -60,7 +66,9 @@ public class Podty implements Parcelable {
         this.listeners = in.readInt();
         this.last_episode_at = in.readString();
         this.last_search = in.readString();
+        this.episodes = new ArrayList<>();
 
+        in.readList(this.episodes, Episodes.class.getClassLoader());
     }
 
 
@@ -82,6 +90,7 @@ public class Podty implements Parcelable {
         parcel.writeInt(this.listeners);
         parcel.writeString(this.last_episode_at);
         parcel.writeString(this.last_search);
+        parcel.writeList(this.episodes);
     }
 
     public static final Parcelable.Creator<Podty> CREATOR = new Parcelable.Creator<Podty>() {

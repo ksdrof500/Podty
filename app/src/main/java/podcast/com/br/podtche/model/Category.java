@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Category implements Serializable {
 
     public static final String ALL = "Tudo";
+    public static final String MY = "Meus episódios";
 
     public long id;
     public String name;

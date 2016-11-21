@@ -21,12 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:visibility="gone"
             app:tabIndicatorColor="@android:color/white"
             app:tabIndicatorHeight="3dp"
             app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="@android:color/white"
-            tools:visibility="visible" />
+            app:tabTextColor="@android:color/white" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"

@@ -28,6 +28,7 @@
             android:background="#F1F1F1"
             android:layout_marginLeft="5dp"
             android:textColor="@color/colorAccent"
+            android:text="@{viewModel.duration}"
             android:contentDescription="@{viewModel.duration}"
             />
 
@@ -39,6 +40,7 @@
             android:layout_alignRight="@+id/duration"
             android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextDark"
+            android:text="@{viewModel.title}"
             android:contentDescription="@{viewModel.title}"
             />
 

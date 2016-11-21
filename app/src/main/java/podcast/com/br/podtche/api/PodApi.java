@@ -17,8 +17,8 @@ public interface PodApi {
     @GET("/v1/feeds/top")
     Observable<DefaultResponse<List<Podty>>> getPodty();
 
-    @GET("/v1/episodes/feed/{id}")
-    Observable<DefaultResponse<List<Episodes>>> getEpisodes(@Path("id") long id);
+    @GET("/v1/feeds/{id}/episodes")
+    Observable<DefaultResponse<Podty>> getEpisodes(@Path("id") long id);
 
     @GET("/v1/feeds/id/{id}")
     Observable<Podty> getFindById(@Path("id") long id);

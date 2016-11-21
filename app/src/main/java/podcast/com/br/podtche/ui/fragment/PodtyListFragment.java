@@ -52,12 +52,8 @@ public class PodtyListFragment extends Fragment implements HomeView{
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-//        if (podtyList != null) {
         adapter = new PodtyListAdapter(getActivity());
         viewModel = new HomeViewModel(getActivity(), this);
-//        }
-
-//        OffersManager.getInstance().addObserver(this);
     }
 
     @Nullable
@@ -73,33 +69,16 @@ public class PodtyListFragment extends Fragment implements HomeView{
             binding.podtyList.setAdapter(adapter);
             binding.setViewModel(viewModel);
             binding.podtyList.setItemAnimator(null);
-            binding.pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                @SuppressWarnings("MissingPermission")
-                @Override
-                public void onRefresh() {
-
-                    boolean hasPermission = PermissionsManager.isPermissionGranted(getContext(),
-                            Manifest.permission.ACCESS_FINE_LOCATION);
-
-                    if (hasPermission) {
-
-                        LocationManager manager = (LocationManager) getContext()
-                                .getSystemService(Context.LOCATION_SERVICE);
-
-                        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                            manager.requestSingleUpdate(LocationManager.GPS_PROVIDER,
-                                    new SimpleLocationListener(), Looper.getMainLooper());
-
-//                        } else {
-//                            ProfileManager.getInstance().setLocation(null);
-                        }
-
-                    }
-
-//                    OffersManager.getInstance().refresh();
-//                    ProfileManager.getInstance().checkForNetworkMsisdn(getContext());
-                }
-            });
+//            binding.pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//                @SuppressWarnings("MissingPermission")
+//                @Override
+//                public void onRefresh() {
+//
+//
+////
+//                }
+//
+//            });
 
         }else{
 
@@ -107,7 +86,7 @@ public class PodtyListFragment extends Fragment implements HomeView{
             binding.podtyListCollection.setLayoutManager(new LinearLayoutManager(getContext()));
             binding.podtyListCollection.setAdapter(adapter);
             binding.podtyListCollection.setItemAnimator(null);
-            binding.pullToRefresh.setVisibility(View.GONE);
+//            binding.pullToRefresh.setVisibility(View.GONE);
             binding.podtyListCollection.setVisibility(View.VISIBLE);
 
         }

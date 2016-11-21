@@ -11,7 +11,7 @@ import podcast.com.br.podtche.model.Podty;
  */
 
 public interface DetailView {
-    void displayEpisodes(DefaultResponse<List<Episodes>> episodes);
+    void displayEpisodes(DefaultResponse<Podty> episodes);
 
 
 }

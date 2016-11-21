@@ -10,6 +10,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.View;
 
+import podcast.com.br.podtche.MainApplication;
 import podcast.com.br.podtche.model.Podty;
 import podcast.com.br.podtche.ui.activity.DetailActivity;
 import podcast.com.br.podtche.ui.activity.MainActivity;
@@ -31,6 +32,8 @@ public class HomeItemViewModel extends BaseObservable {
         title = new ObservableField<>();
         image = new ObservableField<>();
         this.activity = activity;
+        MainApplication.getApplication(activity)
+                .getComponent().inject(this);
 
     }
 

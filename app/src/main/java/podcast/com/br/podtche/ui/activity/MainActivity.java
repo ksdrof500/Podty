@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewModel(viewModel);
 
-        setSupportActionBar(binding.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawer,
                 binding.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -58,18 +60,8 @@ public class MainActivity extends AppCompatActivity
         View header = binding.navigation.getHeaderView(0);
         MenuHeaderBinding headerBinding = MenuHeaderBinding.bind(header);
         headerBinding.setViewModel(new MenuHeaderViewModel(this, this));
-
-        if (savedInstanceState == null) {
-
-            binding.navigation.setCheckedItem(R.id.nav_home);
-            navigateTo(R.id.nav_home);
-
-            viewModel.verify();
-
-        } else {
-            intendedScreenId = savedInstanceState.getInt(KEY_CURRENT_SCREEN);
-            resumeNavigation(binding.getRoot());
-        }
+        navigateTo(R.id.nav_home);
+        viewModel.verify();
     }
 
     @Override

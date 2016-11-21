@@ -28,15 +28,13 @@ public class DetailItemViewModel extends BaseObservable {
     private Episodes episodes;
     private Activity activity;
 
-    @Inject
-    protected MainApplication application;
 
     public DetailItemViewModel(Activity activity) {
         title = new ObservableField<>();
         duration = new ObservableField<>();
         this.activity = activity;
 
-        application.getApplication(activity)
+        MainApplication.getApplication(activity)
                 .getComponent().inject(this);
 
     }

@@ -28,7 +28,7 @@ import podcast.com.br.podtche.viewmodel.DetailViewModel;
  * Created by filipenunes on 31/10/16.
  */
 
-public class DetailActivity extends AppCompatActivity implements DetailView{
+public class DetailActivity extends UtilActivity implements DetailView{
 
     public static final String EXTRA_PODTY = "extra_podty";
 
@@ -50,13 +50,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         podty = extras.getParcelable(EXTRA_PODTY);
         detailViewModel = new DetailViewModel(this, this, podty);
         adapter = new EpisodesListAdapter(this);
-        binding.setViewModel(detailViewModel);
 
         RecyclerView.LayoutManager verticalManager = new LinearLayoutManager(getApplicationContext(),
                 OrientationHelper.VERTICAL, false);
         binding.podtyList.setLayoutManager(verticalManager);
         binding.podtyList.setAdapter(adapter);
-
+        binding.setViewModel(detailViewModel);
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            Slide slide = new Slide(Gravity.BOTTOM);
@@ -89,8 +88,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
 
     @Override
-    public void displayEpisodes(DefaultResponse<List<Episodes>> episodes) {
-        adapter.setItems(episodes.data);
+    public void displayEpisodes(DefaultResponse<Podty> episodes) {
+        adapter.setItems(episodes.data.episodes);
     }
 
 

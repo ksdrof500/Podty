@@ -20,12 +20,6 @@ public class PodtyListAdapter extends DataBindingAdapter<ItemHomeBinding, Podty>
         this.activity = activity;
     }
 
-//
-//    @Override
-//    public int getItemViewType(int position) {
-//        return podtyList.get(position).image == null ? TYPE_WITHOUT_IMAGE : TYPE_WITH_IMAGE;
-//    }
-
     @Override
     protected int getItemResource() {
         return R.layout.item_home;

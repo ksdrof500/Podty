@@ -19,8 +19,11 @@ import rx.schedulers.Schedulers;
 
 public class DetailViewModel extends ProgressViewModel{
 
+    private static final String LOG_TAG = DetailViewModel.class.getSimpleName();
+
 
     public ObservableField<String> photo = new ObservableField<>();
+    public ObservableField<String> author = new ObservableField<>();
 
     protected Podty podty;
     protected Context context;
@@ -29,16 +32,12 @@ public class DetailViewModel extends ProgressViewModel{
     @Inject
     protected PodApi api;
 
-    @Inject
-    protected MainApplication application;
-
-
     public DetailViewModel (Context context, DetailView detailView, Podty podty){
         this.podty = podty;
         this.detailView = detailView;
         this.context = context;
 
-        application.getApplication(context)
+        MainApplication.getApplication(context)
                 .getComponent().inject(this);
 
         displayDetail();
@@ -47,6 +46,7 @@ public class DetailViewModel extends ProgressViewModel{
 
     private void displayDetail(){
         photo.set(podty.thumbnail_600);
+        author.set(podty.name);
 
         displayContent();
         notifyChange();

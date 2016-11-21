@@ -8,9 +8,9 @@
             android:title="@string/title_menu_home" />
 
         <item
-            android:id="@+id/nav_favorites"
+            android:id="@+id/nav_friends"
             android:icon="@android:drawable/star_big_off"
-            android:title="@string/title_menu_favorites" />
+            android:title="@string/title_menu_friends" />
 
         <item
             android:id="@+id/nav_about_app"
