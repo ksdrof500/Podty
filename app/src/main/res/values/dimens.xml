@@ -14,4 +14,9 @@
     <dimen name="image_height">200dp</dimen>
     <dimen name="grid_item_spacing">2dp</dimen>
 
+    <dimen name="parallax_image_height">320dp</dimen>
+    <dimen name="parallax_image_height_ancor">360dp</dimen>
+
+    <!-- Bottom control panel-->
+    <dimen name="bottom_control_panel">160dp</dimen>
 </resources>

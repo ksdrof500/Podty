@@ -1,4 +1,5 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -9,66 +10,102 @@
             type="podcast.com.br.podtche.viewmodel.DetailViewModel" />
     </data>
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000"
+        android:orientation="vertical">
 
-        <LinearLayout
+    <podcast.com.br.podtche.ui.slidinguppanelhelper.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="?attr/actionBarSize"
+        sothree:umanoParalaxOffset="0dp"
+        sothree:umanoShadowHeight="4dp">
+
+        <!-- MAIN CONTENT -->
+
+        <include
+            android:id="@+id/include_sliding_panelchildone"
+            layout="@layout/include_albumandartisdetails"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/padding_small">
+            android:layout_height="match_parent" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <!-- SLIDING LAYOUT -->
 
-                <podcast.com.br.podtche.ui.ThreeTwoImageView
-                    android:id="@+id/photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:scaleType="centerCrop"
-                    android:transitionName="@string/transition_photo"
-                    app:imageUrl="@{viewModel.photo}"
-                    />
+        <include
+            android:id="@+id/include_sliding_panel_childtwo"
+            layout="@layout/include_slidingpanel_childtwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </podcast.com.br.podtche.ui.slidinguppanelhelper.SlidingUpPanelLayout>
+</LinearLayout>
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?android:actionBarSize"
-                    android:navigationIcon="@drawable/ic_arrow_back" />
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-            </FrameLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingBottom="@dimen/padding_small">-->
 
+            <!--<FrameLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
 
+                <!--<podcast.com.br.podtche.ui.ThreeTwoImageView-->
+                    <!--android:id="@+id/photo"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:scaleType="centerCrop"-->
+                    <!--android:transitionName="@string/transition_photo"-->
+                    <!--app:imageUrl="@{viewModel.photo}"-->
+                    <!--/>-->
 
-            <LinearLayout
-                android:id="@+id/ll_group"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:transitionGroup="true">
+                <!--<android.support.v7.widget.Toolbar-->
+                    <!--android:id="@+id/toolbar"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="?android:actionBarSize"-->
+                    <!--android:navigationIcon="@drawable/ic_arrow_back" />-->
 
-                <TextView
-                    android:id="@+id/author"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="@dimen/padding_normal"
-                    android:paddingStart="@dimen/padding_normal"
-                    android:paddingTop="@dimen/padding_large"
-                    android:text="@{viewModel.author}"
-                    android:textColor="?android:textColorPrimary"/>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/podtyList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+            <!--</FrameLayout>-->
 
 
-            </LinearLayout>
 
-        </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_group"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:transitionGroup="true">-->
 
-    </ScrollView>
+                <!--<TextView-->
+                    <!--android:id="@+id/author"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingEnd="@dimen/padding_normal"-->
+                    <!--android:paddingStart="@dimen/padding_normal"-->
+                    <!--android:paddingTop="@dimen/padding_large"-->
+                    <!--android:text="@{viewModel.author}"-->
+                    <!--android:textColor="?android:textColorPrimary"/>-->
+
+                <!--<android.support.v7.widget.RecyclerView-->
+                    <!--android:id="@+id/podtyList"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent" />-->
+
+
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+    <!--</ScrollView>-->
 </layout>

@@ -1,13 +1,8 @@
 package podcast.com.br.podtche.ui.fragment;
 
-import android.Manifest;
-import android.content.Context;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -22,8 +17,6 @@ import podcast.com.br.podtche.model.Category;
 import podcast.com.br.podtche.model.DefaultResponse;
 import podcast.com.br.podtche.model.Podty;
 import podcast.com.br.podtche.ui.adapters.PodtyListAdapter;
-import podcast.com.br.podtche.utils.PermissionsManager;
-import podcast.com.br.podtche.utils.SimpleLocationListener;
 import podcast.com.br.podtche.view.HomeView;
 import podcast.com.br.podtche.viewmodel.HomeViewModel;
 
@@ -69,16 +62,7 @@ public class PodtyListFragment extends Fragment implements HomeView{
             binding.podtyList.setAdapter(adapter);
             binding.setViewModel(viewModel);
             binding.podtyList.setItemAnimator(null);
-//            binding.pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//                @SuppressWarnings("MissingPermission")
-//                @Override
-//                public void onRefresh() {
-//
-//
-////
-//                }
-//
-//            });
+
 
         }else{
 
@@ -86,7 +70,6 @@ public class PodtyListFragment extends Fragment implements HomeView{
             binding.podtyListCollection.setLayoutManager(new LinearLayoutManager(getContext()));
             binding.podtyListCollection.setAdapter(adapter);
             binding.podtyListCollection.setItemAnimator(null);
-//            binding.pullToRefresh.setVisibility(View.GONE);
             binding.podtyListCollection.setVisibility(View.VISIBLE);
 
         }

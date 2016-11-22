@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/tools">
     <string name="app_name">PodTche</string>
 
     <string name="label_do_login">Faça login</string>
@@ -21,4 +21,43 @@
 
     <string name="facebook_app_id">2162082357349454</string>
     <string name="server_client_id">1042930653530</string>
+
+    <string name="albumsongseparator">\n</string>
+
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> songs</item>
+    </plurals>
+
+    <!-- shows how many songs on the album are by the selected artist, out of how many total, if those two numbers are different -->
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> of <xliff:g id="total_count">%1$d</xliff:g> songs</item>
+    </plurals>
+
+    <!-- Used in artists list view, indicates how many albums exist for a given artist. -->
+    <plurals name="Nalbums">
+
+        <!-- number of albums is one -->
+        <item quantity="one">1 album</item>
+        <!-- number of albums is not equal to one -->
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> albums</item>
+    </plurals>
+    <plurals name="NNNtracksdeleted">
+
+        <!-- delete confirmation message for 1 song -->
+        <item quantity="one">1 song was deleted.</item>
+        <!-- delete confirmation message for 0 or more than 1 songs -->
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> songs were deleted.</item>
+        <plurals name="NNNtrackstoplaylist">
+
+            <!-- message shown when one song was added -->
+            <item quantity="one">1 song added to playlist.</item>
+            <!-- message shown when zero or more than one song was added -->
+            <item quantity="other"><xliff:g example="27" id="number">%d</xliff:g> songs added to playlist.</item>
+        </plurals>
+    </plurals>
+
+    <string name="onesong">1 song</string>
+
+
+
 </resources>

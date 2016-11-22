@@ -10,57 +10,58 @@
             name="viewModel"
             type="podcast.com.br.podtche.viewmodel.HomeItemViewModel" />
     </data>
-
-    <RelativeLayout
-        android:id="@+id/relative_layout_offer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/shape_item_home"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bar_selector_white"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:orientation="vertical"
-        android:elevation="6dp"
-        >
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="3dp">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/photo"-->
-            <!--android:layout_width="@dimen/article_thumb_widht"-->
-            <!--android:layout_height="@dimen/article_thumb_widht"-->
-            <!--android:background="#F1F1F1"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:contentDescription="@{viewModel.title}"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--android:onClick="@{viewModel::onClickItem}"-->
-            <!--android:stateListAnimator="@animator/raise"-->
-            <!--android:transitionName="@string/transition_photo"-->
-            <!--app:imageUrl="@{viewModel.image}" />-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
 
         <podcast.com.br.podtche.ui.ForegroundImageView
             android:id="@+id/photo"
-            android:layout_width="@dimen/article_thumb_widht"
-            android:layout_height="@dimen/article_thumb_widht"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:background="#F1F1F1"
             android:clickable="true"
+            android:layout_above="@+id/rel_title_layout"
             android:onClick="@{viewModel::onClickItem}"
             android:stateListAnimator="@animator/raise"
             android:transitionName="@string/transition_photo"
             app:imageUrl="@{viewModel.image}"
             />
 
-        <!--<TextView-->
-            <!--android:id="@+id/offerTitle"-->
-            <!--android:layout_width="@dimen/article_thumb_widht"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/offerThumb"-->
-            <!--android:layout_marginTop="-50dp"-->
-            <!--android:background="@drawable/scrim"-->
-            <!--android:textColor="@color/colorAccent"-->
-            <!--android:gravity="center"-->
-            <!--android:textSize="20sp"-->
-            <!--android:text="@{viewModel.title}"-->
-            <!--tools:text="Upward: Big Wave Chrager " />-->
+            <RelativeLayout
+                android:id="@+id/rel_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="5dip">
 
+                <TextView
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:gravity="center_vertical"
+                    android:text="@{viewModel.title}"
+                    android:textColor="?colorPrimary"
+                    android:textSize="15sp" />
 
-    </RelativeLayout>
-
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </layout>
